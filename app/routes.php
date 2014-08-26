@@ -13,15 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('resources/index');
 });
-
-Route::get('/attendance', function()
+Route::get('documents',function()
 {
-    return View::make('attendance.index');
-});
-
-Route::get('input', function()
+    return View::make('resources.documents');
+});Route::get('audios',function()
 {
-    return View::make('attendance.input');
+    return View::make('resources.audios');
+});Route::get('videos',function()
+{
+    return View::make('resources.videos');
 });
