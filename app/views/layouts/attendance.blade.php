@@ -1,7 +1,14 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: LAB
- * Date: 8/26/14
- * Time: 12:39 PM
- */ 
+<!doctype html>
+<html>
+<head>
+    <title>Attendance Module</title>
+    <meta charset="utf-8">
+    <!-- Bootstrap core CSS -->
+    <link href={{ URL::asset('css/bootstrap.css'); }} rel="stylesheet">
+
+</head>
+<body>
+    @yield('main')
+</div>
+</body>
+</html>

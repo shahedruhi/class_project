@@ -15,3 +15,8 @@ Route::get('/', function()
 {
 	return View::make('hello');
 });
+
+Route::get('/attendance', function()
+{
+    return View::make('attendance.index');
+});
