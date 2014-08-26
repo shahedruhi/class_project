@@ -13,15 +13,21 @@
 
 Route::get('/', function()
 {
-	return View::make('resources/index');
+    return View::make('hello');
 });
-Route::get('documents',function()
+
+
+Route::get('/attendances', function()
 {
-    return View::make('resources.documents');
-});Route::get('audios',function()
+	return View::make('attendances/index');
+});
+Route::get('/attendances/documents',function()
 {
-    return View::make('resources.audios');
-});Route::get('videos',function()
+    return View::make('attendances.documents');
+});Route::get('/attendances/audios',function()
 {
-    return View::make('resources.videos');
+    return View::make('attendances.audios');
+});Route::get('/attendances/videos',function()
+{
+    return View::make('attendances.videos');
 });
