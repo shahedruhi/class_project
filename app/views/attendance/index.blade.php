@@ -20,13 +20,15 @@
                     <!--panel-->
                     <div class="panel panel-primary">
                         <!-- Default panel contents -->
-                        <div class="panel-heading"><h4>4 STUDENTS HAVE REGISTERED</h4></div>
+                        <div class="panel-heading text-center"><h4>STUDENT ATTENDANCE</h4></div>
                         <div class="panel-body">
 
                             <div class="list-group">
-                                <a href="view_All_Students.php" class="list-group-item list-group-item-success"><b>VIEW ALL STUDENTS</b></a>
-                                <a href="add_New_Student.php" class="list-group-item list-group-item-info"><b>ADD NEW STUDENT</b></a>
-                                <a href="add_New_Student_With_Courses.php" class="list-group-item list-group-item-warning"><b>ASSIGN STUDENT WITH COURSES</b></a>
+                                <a href="input" button type="button" class="btn btn-primary btn-lg btn-block">INPUT STUDENT ATTENDANCE</button></a>
+                                <a href="input" button type="button" class="btn btn-success btn-lg btn-block">SHOW STUDENT ATTENDANCE</button></a>
+                                <a href="input" button type="button" class="btn btn-info btn-lg btn-block">STUDENT ATTENDANCE REPORT</button></a>
+
+
                             </div>
 
                         </div>
@@ -38,13 +40,13 @@
                     <!--panel-->
                     <div class="panel panel-primary">
                         <!-- Default panel contents -->
-                        <div class="panel-heading"><h4>5 COURSES ARE AVAILABLE</h4></div>
+                        <div class="panel-heading text-center"><h4>TRAINER ATTENDANCE</h4></div>
                         <div class="panel-body">
 
                             <div class="list-group">
-                                <a href="view_All_Courses.php" class="list-group-item list-group-item-success"><b>VIEW ALL COURSES</b></a>
-                                <a href="add_New_Course.php" class="list-group-item list-group-item-info"><b>ADD NEW COURSE</b></a>
-                                <a href="add_Courses_To_Students.php" class="list-group-item list-group-item-warning"><b>ASSIGN COURSES TO STUDENTS</b></a>
+                                <a href="input" button type="button" class="btn btn-primary btn-lg btn-block">INPUT TRAINER ATTENDANCE</button></a>
+                                <a href="input" button type="button" class="btn btn-success btn-lg btn-block">SHOW TRAINER ATTENDANCE</button></a>
+                                <a href="input" button type="button" class="btn btn-info btn-lg btn-block">STUDENT TRAINER REPORT</button></a>
                             </div>
 
                         </div>

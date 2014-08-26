@@ -20,3 +20,8 @@ Route::get('/attendance', function()
 {
     return View::make('attendance.index');
 });
+
+Route::get('input', function()
+{
+    return View::make('attendance.input');
+});
