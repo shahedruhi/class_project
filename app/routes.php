@@ -21,13 +21,15 @@ Route::get('/attendances', function()
 {
 	return View::make('attendances/index');
 });
-Route::get('/attendances/documents',function()
+Route::get('/page1',function()
 {
-    return View::make('attendances.documents');
-});Route::get('/attendances/audios',function()
+    return View::make('attendances.page1');
+
+});Route::get('/page2',function()
 {
-    return View::make('attendances.audios');
-});Route::get('/attendances/videos',function()
+    return View::make('attendances.page2');
+
+});Route::get('/page3',function()
 {
-    return View::make('attendances.videos');
+    return View::make('attendances.page3');
 });
