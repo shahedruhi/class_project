@@ -4,18 +4,10 @@
 <br>
 <br>
 <div class="container">
-
-    <div class="row">
-
-        <div class="col-md-2" style="background-color: #; box-shadow: inset 0px -0px 0px #444, inset 0px 0px 0px #444;">
-            <p>
-
-            </p>
-        </div>
-        <div class="col-md-10" style="background-color: #D8F6CE;box-shadow: inset 0px 0-px 0px #444, inset 0px 0px 0px #444;">
+        <div class="col-md-" style="background-color: #D8F6CE;box-shadow: inset 0px 0-px 0px #444, inset 0px 0px 0px #444;">
             <h1>Welcome to Attendance page</h1>
             <div class="row">
-                <div class="col-md-6" style="background-color: #D8F6CE; box-shadow: inset 0px -0px 0px #444, inset -0px 0px 0px #444;">
+                <div class="col-md-5" style="background-color: #D8F6CE; box-shadow: inset 0px -0px 0px #444, inset -0px 0px 0px #444;">
 
                     <!--panel-->
                     <div class="panel panel-primary">
@@ -36,7 +28,7 @@
                     <!--end of panel-->
                 </div>
 
-                <div class="col-md-6" style="background-color: #D8F6CE;box-shadow: inset 0px -0px 0px #444, inset -0px 0px 0px #444;">
+                <div class="col-md-5" style="background-color: #D8F6CE;box-shadow: inset 0px -0px 0px #444, inset -0px 0px 0px #444;">
                     <!--panel-->
                     <div class="panel panel-primary">
                         <!-- Default panel contents -->
