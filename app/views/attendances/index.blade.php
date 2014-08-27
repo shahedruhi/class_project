@@ -38,7 +38,7 @@
                     <div class="btn-group">
                         <a href="page4">
                             <i class="icon-database"></i>
-                            Update Attendances
+                            Edit Attendances
                         </a>
                     </div>
                 </li>

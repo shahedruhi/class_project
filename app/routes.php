@@ -11,16 +11,22 @@
 |
 */
 
-Route::get('/', function()
+/*Route::get('/', function()
 {
     return View::make('hello');
-});
+});*/
 
 
 Route::get('/attendances', function()
 {
 	return View::make('attendances/index');
 });
+
+Route::post('/attendances', function()
+{
+    return View::make('attendances/index');
+});
+
 
 Route::get('/page1',function()
 {
@@ -43,3 +49,5 @@ Route::get('/page4',function()
 {
     return View::make('attendances.page4');
 });
+
+//Route::resource('attendances','AttendanceController');
