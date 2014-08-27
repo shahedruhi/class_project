@@ -4,7 +4,7 @@
 
 <div id="content">
     <div id="content-header" class="mini">
-        <h1>Show Attendances page</h1>
+        <h1>Update Attendances Report Page</h1>
     </div>
     <div class="container-fluid">
         <div class="row">

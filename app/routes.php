@@ -21,15 +21,25 @@ Route::get('/attendances', function()
 {
 	return View::make('attendances/index');
 });
+
 Route::get('/page1',function()
 {
     return View::make('attendances.page1');
 
-});Route::get('/page2',function()
+});
+
+Route::get('/page2',function()
 {
     return View::make('attendances.page2');
 
-});Route::get('/page3',function()
+});
+
+Route::get('/page3',function()
 {
     return View::make('attendances.page3');
+});
+
+Route::get('/page4',function()
+{
+    return View::make('attendances.page4');
 });
