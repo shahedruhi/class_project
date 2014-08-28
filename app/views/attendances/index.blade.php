@@ -1,8 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.attendances')
 
 @section('main')
 
-<div id="content">
+<!--<div id="content">-->
     <div id="content-header" class="mini">
         <h1>Attendances Main Page</h1>
     </div>
@@ -134,7 +134,7 @@
     </div>
 </div>
 
-</div>
+<!--</div>-->
 
 </div>
 </div>

@@ -1,9 +1,9 @@
-@extends('layouts.default')
+@extends('layouts.attendances')
 
 @section('main')
 
-<div id="content">
-    <div id="content-header" class="mini">
+
+<div id="content-header" class="mini">
         <h1>Edit Attendances Report Page</h1>
     </div>
     <div class="container-fluid">
@@ -39,11 +39,7 @@
 
         <br />
 
-
-    </div>
-
-
-
 </div>
+
 
 @stop
