@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: LAB
- * Date: 8/27/14
- * Time: 4:31 PM
+ * Date: 8/28/14
+ * Time: 12:14 PM
  */
 
 class Attendance extends Eloquent{

@@ -16,15 +16,11 @@ Route::get('/', function()
     return View::make('hello');
 });
 
+//Route::resource('attendances','AttendanceController');
 
 Route::get('/attendances', function()
 {
 	return View::make('attendances/index');
-});
-
-Route::post('/attendances', function()
-{
-    return View::make('attendances/index');
 });
 
 
@@ -50,4 +46,4 @@ Route::get('/page4',function()
     return View::make('attendances.page4');
 });
 
-//Route::resource('attendances','AttendanceController');
+Route::resource('attendances','AttendanceController');

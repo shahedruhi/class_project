@@ -1,4 +1,4 @@
-@extends('layouts.attendances')
+@extends('layouts.attendance')
 
 @section('main')
 
