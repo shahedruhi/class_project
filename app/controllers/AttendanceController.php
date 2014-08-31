@@ -52,7 +52,7 @@ class AttendanceController extends \BaseController {
                                        FROM attendances
                                        INNER JOIN users
                                        ON users.user_id = attendances.users_id');
-        //dd($attendancesList);
+        dd($attendancesList);
         return View::make('attendances.input_By_Date',compact('attendancesList'));
         //return View::make('attendances.input_By_Date');
     }
