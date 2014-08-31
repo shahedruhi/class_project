@@ -35,6 +35,8 @@
 
 
 
+
+
 <!--                {{ Form::open(array('url' => url('foo/bar'), 'class'=>'form-inline')) }}-->
 <!---->
 <!--                {{ Form::label('selectBatch', 'SELECT BATCH') }}-->

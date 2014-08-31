@@ -9,9 +9,7 @@ class AttendanceController extends \BaseController {
 	 */
 	public function index()
 	{
-        //get all Books
-        $attendancesList = Attendance::all();
-        return View::make('attendances.index',compact('attendancesList'));
+        return View::make('attendances/index');
 	}
 
 
@@ -20,10 +18,39 @@ class AttendanceController extends \BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+    public function input_Attendances()
+    {
+        return View::make('attendances.input_Attendances');
+    }
+
+    public function create_Attendances_Report()
+    {
+        return View::make('attendances.create_Attendances_Report');
+    }
+
+    public function edit_Attendances()
+    {
+        return View::make('attendances.edit_Attendances');
+    }
+
+    public function show_List()
+    {
+        //get all Books
+        $attendancesList = Attendance::all();
+        return View::make('attendances.show_List',compact('attendancesList'));
+    }
+
+    public function show_Attendances()
+    {
+        return View::make('attendances.show_Attendances');
+    }
+
+    public function create()
 	{
 		//
 	}
+
+
 
 
 	/**

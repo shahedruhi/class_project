@@ -9,36 +9,42 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 center" style="text-align: center;">
-            <p>{{ link_to_route('attendances.create', 'Create new book') }}</p>
-            @if ($attendancesList->count())
-            <table class="table table-bordered">
-                <thead>
-                <tr>
-                    <th>UserId</th>
-                    <th>Presence</th>
-                    <th>Action</th>
+            <ul class="quick-actions">
+                <li>
+                    <div class="btn-group">
+                        <a href="/input_Attendances">
+                            <i class="icon-book"></i>
+                            Input Attendances
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <a href="/show_Attendances">
+                            <i class="icon-cal"></i>
+                            Show Attendances
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <a href="/create_Attendances_Report">
+                            <i class="icon-survey"></i>
+                            Create Attendances Report
+                        </a>
+                    </div>
+                </li>
+                <li>
+                    <div class="btn-group">
+                        <a href="/edit_Attendances">
+                            <i class="icon-database"></i>
+                            Edit Attendances
+                        </a>
+                    </div>
+                </li>
+            </ul>
 
-                </tr>
-                </thead>
 
-                <tbody>
-                @foreach ($attendancesList as $attendance)
-                <tr>
-                    <td>{{ $attendance->users_id }}</td>
-                    <td>{{ $attendance->presence }}</td>
-
-                    <td>{{ link_to_route('attendances.show', 'Read', array($attendance->id),
-                        array('class' => 'btn btn-primary')) }}
-                    {{ link_to_route('attendances.edit', 'Update', array($attendance->id),
-                        array('class' => 'btn btn-warning')) }}</td>
-
-                </tr>
-                @endforeach
-                </tbody>
-            </table>
-            @else
-            There are no attendances
-            @endif
 
 
 
@@ -46,6 +52,94 @@
     </div>
 
     <br />
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="text-center">Current Courses</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <span class="badge alert-danger">New</span>
+                            <h4 class="list-group-item-heading">
+                                Feature
+                            </h4>
+                            <p class="list-group-item-text">
+                                Feature
+                            </p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                Feature
+                            </h4>
+                            <p class="list-group-item-text">
+                                Feature
+                            </p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                Feature
+                            </h4>
+                            <p class="list-group-item-text">
+                                Feature
+                            </p>
+                        </a>
+                    </div>
+                    <a href="" class="btn btn-info col-lg-offset-7 col-lg-5">
+                        More
+                        <b class="glyphicon glyphicon-arrow-right"></b>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="text-center">Trainer</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="list-group">
+                        <a href="#" class="list-group-item ">
+                            <span class="badge alert-danger">New</span>
+                            <h4 class="list-group-item-heading">
+                                Feature
+                            </h4>
+                            <p class="list-group-item-text">
+                                Feature
+                            </p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                Feature
+                            </h4>
+                            <p class="list-group-item-text">
+                                Feature
+                            </p>
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <h4 class="list-group-item-heading">
+                                Feature
+                            </h4>
+                            <p class="list-group-item-text">
+                                Feature
+                            </p>
+                        </a>
+                    </div>
+                    <a href="" class="btn btn-primary col-lg-offset-7 col-lg-5">
+                        More
+                        <b class="glyphicon glyphicon-arrow-right"></b>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!--</div>-->
+
+    </div>
+</div>
 
 
 </div>

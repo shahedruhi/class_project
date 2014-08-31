@@ -16,34 +16,56 @@ Route::get('/', function()
     return View::make('hello');
 });
 
-//Route::resource('attendances','AttendanceController');
-
-Route::get('/attendances', function()
+Route::get('attendances', function()
 {
-	return View::make('attendances/index');
+	return View::make('attendances.index');
 });
 
+Route::get('input_Attendances','AttendanceController@input_Attendances');
 
-Route::get('/page1',function()
-{
-    return View::make('attendances.page1');
+Route::get('create_Attendances_Report','AttendanceController@create_Attendances_Report');
 
-});
+Route::get('edit_Attendances','AttendanceController@edit_Attendances');
 
-Route::get('/page2',function()
-{
-    return View::make('attendances.page2');
+Route::get('show_List','AttendanceController@show_List');
 
-});
-
-Route::get('/page3',function()
-{
-    return View::make('attendances.page3');
-});
-
-Route::get('/page4',function()
-{
-    return View::make('attendances.page4');
-});
+Route::get('show_Attendances','AttendanceController@show_Attendances');
 
 Route::resource('attendances','AttendanceController');
+
+/*
+Route::get('/input_Attendances',function()
+{
+    return View::make('attendances.input_Attendances');
+
+});
+
+Route::get('/show_Attendances',function()
+{
+    return View::make('attendances.show_Attendances');
+
+});
+
+Route::get('/create_Attendances_Report',function()
+{
+    return View::make('attendances.create_Attendances_Report');
+});
+
+Route::get('/edit_Attendances',function()
+{
+    return View::make('attendances.edit_Attendances');
+});
+
+Route::get('/edit_Attendances',function()
+{
+    return View::make('attendances.edit_Attendances');
+});
+
+Route::get('/showAll', 'AttendanceController@showAll');
+Route::get('/showAll', function()
+{
+    return View::make('attendances/show_All_attendances');
+});
+*/
+
+
