@@ -45,6 +45,18 @@ class AttendanceController extends \BaseController {
         return View::make('attendances.show_Attendances');
     }
 
+    public function input_By_Date()
+    {
+        //$attendancesList = Attendance::all();
+        $attendancesList = DB::select('SELECT attendances.start_time, users.name, attendances.presence, attendances.comments
+                                       FROM attendances
+                                       INNER JOIN users
+                                       ON users.user_id = attendances.users_id');
+        //dd($attendancesList);
+        return View::make('attendances.input_By_Date',compact('attendancesList'));
+        //return View::make('attendances.input_By_Date');
+    }
+
     public function create()
 	{
 		//
