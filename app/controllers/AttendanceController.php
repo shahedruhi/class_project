@@ -57,9 +57,16 @@ class AttendanceController extends \BaseController {
         //return View::make('attendances.input_By_Date');
     }
 
-    public function create()
+    public function commence_course()
+    {
+        return View::make('attendances.commence_course');
+    }
+
+
+        public function create()
 	{
-		//
+        //commence courses and add data into attendances table
+        return View::make('attendances.create');
 	}
 
 

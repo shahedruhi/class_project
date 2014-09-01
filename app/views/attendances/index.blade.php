@@ -61,15 +61,10 @@
                 </div>
                 <div class="panel-body">
                     <div class="list-group">
-                        <a href="#" class="list-group-item ">
-                            <span class="badge alert-danger">New</span>
-                            <h4 class="list-group-item-heading">
-                                Feature
+                            <h4>
+                                <p>{{ link_to_route('attendances.create', 'COMMENCE COURSE') }}</p>
+
                             </h4>
-                            <p class="list-group-item-text">
-                                Feature
-                            </p>
-                        </a>
                         <a href="#" class="list-group-item">
                             <h4 class="list-group-item-heading">
                                 Feature
