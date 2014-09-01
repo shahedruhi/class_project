@@ -82,8 +82,10 @@ class AttendanceController extends \BaseController {
             'batches_id'=>'required',
             'course_id'=>'required',
             'track_id'=>'required',
+            'start_date'=>'required',
+            'end_date'=>'required',
             'start_time'=>'required',
-            'end_time'=>'required',
+//            'end_time'=>'required',
             'duration'=>'required',
         );
         //get all information
@@ -95,7 +97,24 @@ class AttendanceController extends \BaseController {
         {
             //save new information in the database
             //and redirect to show page
-            Attendance::create($attendanceInfo);
+            //print_r($attendanceInfo);die();
+            $attendance = $attendanceInfo;
+            for($start_date = $attendanceInfo['start_date']; $start_date <= $attendanceInfo['end_date']; $start_date = date_add($start_date, date_interval_create_from_date_string('1 day')) )
+            {
+
+            $attendance['start_time'] = $attendanceInfo['start_date'] + $attendanceInfo['start_time'];
+            $attendance['end_time'] =  $attendance['start_time'] +  $attendance['duration'];
+
+
+            //Attendance::create($attendance);
+
+            }
+
+            print_r($attendance['start_time']);
+            print_r($attendance['end_time']);
+            die();
+
+            //Attendance::create($attendanceInfo);
             return Redirect::route('attendances.show')
                 ->withInput()
                 ->withErrors($validation)

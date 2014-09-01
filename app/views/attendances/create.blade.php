@@ -21,13 +21,25 @@
         {{ Form::label('Track ID', 'Track ID:') }}
         {{ Form::input('number', 'track_id') }}
     </li>
+<!--    <li>-->
+<!--        {{ Form::label('Start Time', 'Start time:') }}-->
+<!--        {{ Form::input('datetime', 'start_time') }}-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        {{ Form::label('End Time', 'End Time:') }}-->
+<!--        {{ Form::input('datetime', 'end_time') }}-->
+<!--    </li>-->
     <li>
-        {{ Form::label('Start Time', 'Start time:') }}
-        {{ Form::input('datetime', 'start_time') }}
+        {{ Form::label('Start Date', 'Start Date:') }}
+        {{ Form::input('datetime', 'start_date') }}
     </li>
     <li>
-        {{ Form::label('End Time', 'End Time:') }}
-        {{ Form::input('datetime', 'end_time') }}
+        {{ Form::label('End Date', 'End Date:') }}
+        {{ Form::input('datetime', 'end_date') }}
+    </li>
+    <li>
+        {{ Form::label('Start Time', 'Start Time:') }}
+        {{ Form::input('time', 'start_time') }}
     </li>
     <li>
         {{ Form::label('Session Duration', 'Session Duration:') }}
