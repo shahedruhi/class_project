@@ -16,10 +16,10 @@ Route::get('/', function()
     return View::make('hello');
 });
 
-Route::get('attendances', function()
-{
-	return View::make('attendances.index');
-});
+//Route::get('attendances', function()
+//{
+//	return View::make('attendances.index');
+//});
 
 Route::get('input_Attendances','AttendanceController@input_Attendances');
 

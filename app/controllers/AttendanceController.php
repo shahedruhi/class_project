@@ -69,9 +69,6 @@ class AttendanceController extends \BaseController {
         return View::make('attendances.create');
 	}
 
-
-
-
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -79,7 +76,36 @@ class AttendanceController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+        //create a rule validation
+        $rules=array(
+            'users_id'=>'required',
+            'batches_id'=>'required',
+            'course_id'=>'required',
+            'track_id'=>'required',
+            'start_time'=>'required',
+            'end_time'=>'required',
+            'duration'=>'required',
+        );
+        //get all information
+        $attendanceInfo = Input::all();
+
+        //validate information with the rules
+        $validation=Validator::make($attendanceInfo,$rules);
+        if($validation->passes())
+        {
+            //save new information in the database
+            //and redirect to show page
+            Attendance::create($attendanceInfo);
+            return Redirect::route('attendances.show')
+                ->withInput()
+                ->withErrors($validation)
+                ->with('message', 'Successfully created Record.');
+        }
+        //show error message
+        return Redirect::route('attendances.create')
+            ->withInput()
+            ->withErrors($validation)
+            ->with('message', 'Some fields are incomplete.');
 	}
 
 
@@ -89,9 +115,11 @@ class AttendanceController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show()
 	{
-		//
+		////get all Books
+        $attendancesList = Attendance::all();
+        return View::make('attendances.show_List',compact('attendancesList'));
 	}
 
 

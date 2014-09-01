@@ -6,31 +6,43 @@
 
 <ul>
     <li>
-        {{ Form::label('Course ID', 'Course ID:') }}
-        {{ Form::text('course_Id') }}
-    </li>
-    <li>
-        {{ Form::label('Track ID', 'Track ID:') }}
-        {{ Form::text('track_Id') }}
+        {{ Form::label('User ID', 'User ID:') }}
+        {{ Form::input('number', 'users_id') }}
     </li>
     <li>
         {{ Form::label('Batch ID', 'Batch ID:') }}
-        {{ Form::text('batch_Id') }}
+        {{ Form::input('number', 'batches_id') }}
     </li>
     <li>
-        {{ Form::label('Start Date', 'Start Date:') }}
-        {{ Form::text('start_Date') }}
+        {{ Form::label('Course ID', 'Course ID:') }}
+        {{ Form::input('number', 'course_id') }}
     </li>
     <li>
-        {{ Form::label('End Date', 'End Date:') }}
-        {{ Form::text('end_Date') }}
+        {{ Form::label('Track ID', 'Track ID:') }}
+        {{ Form::input('number', 'track_id') }}
+    </li>
+    <li>
+        {{ Form::label('Start Time', 'Start time:') }}
+        {{ Form::input('datetime', 'start_time') }}
+    </li>
+    <li>
+        {{ Form::label('End Time', 'End Time:') }}
+        {{ Form::input('datetime', 'end_time') }}
     </li>
     <li>
         {{ Form::label('Session Duration', 'Session Duration:') }}
-        {{ Form::text('end_Date') }}
-    </li>
-
+        {{ Form::input('number', 'duration') }}
+<!--    <li>-->
+<!--        {{ Form::label('Start Time', 'Start Time:') }}-->
+<!--        {{ Form::input('time', 'start_time') }}-->
+<!--    </li>-->
+<!--    <li>-->
+<!--        {{ Form::text('name', $value = null , $attributes = ['class' => 'form-inline', 'id' => 'myid', 'disabled' ,'placeholder' => 'Email']) }}-->
+<!--        {{ Form::label('email', 'E-Mail Address', array('class' => 'awesome')) }}-->
+<!--        {{ Form::checkbox('admin', 'yes', true) }}-->
+<!--    </li>-->
     <li>
+
         {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
     </li>
 </ul>
