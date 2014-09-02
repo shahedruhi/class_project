@@ -35,6 +35,8 @@ Route::get('input_By_Date','AttendanceController@input_By_Date');
 
 Route::get('commence_course','AttendanceController@commence_course');
 
+Route::get('put_Attendances_By_Date','AttendanceController@put_Attendances_By_Date');
+
 Route::resource('attendances','AttendanceController');
 
 /*

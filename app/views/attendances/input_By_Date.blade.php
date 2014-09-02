@@ -11,13 +11,14 @@
             <div class="panel-body">
                 <div class="row">
 
-                {{ Form::open() }}
-                        @if ($attendancesList->count())
+
+                {{ Form::open(array('attendances.update')) }}
+                        @if (count($attendancesList))
                         <table class="table table-bordered">
                             <thead>
                             <tr>
                                 <th>Date</th>
-                                <th>Name</th>
+                                <th>ID</th>
                                 <th>Presence Status</th>
                                 <th>Comments</th>
 
@@ -28,17 +29,22 @@
                             <tbody>
                             @foreach ($attendancesList as $attendance)
                             <tr>
-                                <td>{{ $attendance->start_date }}</td>
-                                <td>{{ $attendance->name }}</td>
+                                <td>{{ $attendance->date }}</td>
+                                <td>{{ $attendance->users_id }}</td>
 
-                                <td>{{ $attendance->presence }}</td>
-                                <td>{{ $attendance->comments }}</td>
+                                <td>Present {{ Form::checkbox('presence', 'yes', true, array('class' => 'name')) }}</td>
 
-
+                                <td>If you want to add any comments {{ Form::text('comments') }}</td>
+                                <td>
+                                <td>{{ link_to_route('attendances.show', 'Read', array($attendance->id),
+                                    array('class' => 'btn btn-primary')) }}</td>
                                 <td>{{ link_to_route('attendances.edit', 'Update', array($attendance->id),
-                                    array('class' => 'btn btn-primary')) }}
-                                    {{ link_to_route('attendances.destroy', 'Delete', array($attendance->id),
                                     array('class' => 'btn btn-warning')) }}</td>
+                                </td>
+
+
+
+
 
                             </tr>
                             @endforeach
