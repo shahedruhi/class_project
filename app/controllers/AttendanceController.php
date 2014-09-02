@@ -84,12 +84,17 @@ class AttendanceController extends \BaseController {
             'track_id'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'start_time'=>'required',
+            //'start_time'=>'required',
 //            'end_time'=>'required',
             'duration'=>'required',
         );
         //get all information
         $attendanceInfo = Input::all();
+//        $date=date_create("2013-03-15");
+//        date_add($date,date_interval_create_from_date_string("1 day"));
+//
+//        print_r($date);
+//        die();
 
         //validate information with the rules
         $validation=Validator::make($attendanceInfo,$rules);
@@ -98,21 +103,65 @@ class AttendanceController extends \BaseController {
             //save new information in the database
             //and redirect to show page
             //print_r($attendanceInfo);die();
+
+
+
             $attendance = $attendanceInfo;
-            for($start_date = $attendanceInfo['start_date']; $start_date <= $attendanceInfo['end_date']; $start_date = date_add($start_date, date_interval_create_from_date_string('1 day')) )
+//            for($start_date = date_create($attendanceInfo['start_date']); $start_date <= $attendanceInfo['end_date']; date_add($start_date, date_interval_create_from_date_string('1 day')) )
+
+
+
+
+            $start_time=strtotime($attendanceInfo['start_date']);
+            $start_time = date("h:i:sa", $start_time);
+            $end_time=strtotime($attendanceInfo['end_date']);
+            $end_time = date("h:i:sa", $end_time);
+
+            $attendance['start_time']=$start_time;
+            $attendance['end_time']=$end_time;
+
+            //print_r($start_time);
+            //print_r($end_time);
+
+            //die();
+
+            $end_date = date_create($attendanceInfo['end_date']);
+
+            for($start_date = date_create($attendanceInfo['start_date']); $start_date <= $end_date; date_add($start_date,date_interval_create_from_date_string("1 day")))
             {
+//                $date=strtotime($attendance['start_date']);
+//                $date = date("Y-m-d", $date);
+                //print_r($start_date);
+//                print_r($start_date);
+//                print_r($end_date);
+                //die();
+            //$attendance['start_time'] = $attendanceInfo['start_date'] + $attendanceInfo['start_time'];
 
-            $attendance['start_time'] = $attendanceInfo['start_date'] + $attendanceInfo['start_time'];
-            $attendance['end_time'] =  $attendance['start_time'] +  $attendance['duration'];
+               // print_r($attendance['start_date']); die();
+            //$attendance['end_time'] =  $attendance['start_time'] +  $attendance['duration'];
+                $attendance['date']=$start_date;
 
 
-            //Attendance::create($attendance);
+//                print_r($attendance['users_id']);
+//                print_r($attendance['batches_id']);
+//                print_r($attendance['course_id']);
+//                print_r($attendance['track_id']);
+//                print_r($attendance['date']);
+//                print_r($attendance['start_time']);
+//                print_r($attendance['end_time']);
+//                print_r($attendance['duration']);
+                //die();
+
+
+
+
+                Attendance::create($attendance);
 
             }
 
-            print_r($attendance['start_time']);
-            print_r($attendance['end_time']);
-            die();
+//            print_r($start_date);
+//            die();
+
 
             //Attendance::create($attendanceInfo);
             return Redirect::route('attendances.show')

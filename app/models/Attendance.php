@@ -7,6 +7,6 @@
  */
 
 class Attendance extends Eloquent{
-    protected $fillable = array( 'users_id','batches_id', 'course_id','track_id','start_date','end_date','start_time','duration');
+    protected $fillable = array( 'users_id','batches_id', 'course_id','track_id','date','start_time','end_time','duration');
 
 } 

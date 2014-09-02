@@ -31,16 +31,18 @@
 <!--    </li>-->
     <li>
         {{ Form::label('Start Date', 'Start Date:') }}
-        {{ Form::input('datetime', 'start_date') }}
+<!--        {{ Form::input('date', 'start_date') }}-->
+        {{ Form::text('start_date', $value = null , $attributes = [ 'placeholder' => '2014-09-02 04:22']) }}
     </li>
     <li>
         {{ Form::label('End Date', 'End Date:') }}
-        {{ Form::input('datetime', 'end_date') }}
+<!--        {{ Form::input('date', 'end_date') }}-->
+        {{ Form::text('end_date', $value = null , $attributes = [ 'placeholder' => '2014-09-02 04:22']) }}
     </li>
-    <li>
-        {{ Form::label('Start Time', 'Start Time:') }}
-        {{ Form::input('time', 'start_time') }}
-    </li>
+<!--    <li>-->
+<!--        {{ Form::label('Start Time', 'Start Time:') }}-->
+<!--        {{ Form::input('time', 'start_time') }}-->
+<!--    </li>-->
     <li>
         {{ Form::label('Session Duration', 'Session Duration:') }}
         {{ Form::input('number', 'duration') }}

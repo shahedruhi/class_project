@@ -16,6 +16,8 @@
                         <th>Id</th>
                         <th>User Id</th>
                         <th>Batch</th>
+                        <th>Track</th>
+                        <th>Date</th>
                         <th>Start of Session</th>
                         <th>End of Session</th>
                         <th>Duration (In Hour)</th>
@@ -33,6 +35,8 @@
                         <td>{{ $attendance->id }}</td>
                         <td>{{ $attendance->users_id }}</td>
                         <td>{{ $attendance->batches_id }}</td>
+                        <td>{{ $attendance->track_id }}</td>
+                        <td>{{ $attendance->date }}</td>
                         <td>{{ $attendance->start_time }}</td>
                         <td>{{ $attendance->end_time }}</td>
                         <td>{{ $attendance->duration }}</td>
