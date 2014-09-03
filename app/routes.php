@@ -27,13 +27,15 @@ Route::get('create_Attendances_Report','AttendanceController@create_Attendances_
 
 Route::get('edit_Attendances','AttendanceController@edit_Attendances');
 
-Route::get('show_List','AttendanceController@show_List');
+Route::get('show_All','AttendanceController@show_All');
 
 Route::get('show_Attendances','AttendanceController@show_Attendances');
 
 Route::get('input_By_Date','AttendanceController@input_By_Date');
 
 Route::get('attendance_input','AttendanceController@attendance_input');
+
+Route::get('show_By_Date_And_Batch','AttendanceController@show_By_Date_And_Batch');
 
 Route::resource('attendances','AttendanceController');
 

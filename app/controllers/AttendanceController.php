@@ -34,7 +34,7 @@ class AttendanceController extends \BaseController {
         return View::make('attendances.edit_Attendances');
     }
 
-    public function show_List()
+    public function show_All()
     {
         //get all Books
         //$attendancesList = Attendance::all();
@@ -45,7 +45,17 @@ class AttendanceController extends \BaseController {
                            ->orderBy('users.user_id')
                            ->get();
 
-        return View::make('attendances.show_List',compact('attendancesList'));
+        return View::make('attendances.show_All',compact('attendancesList'));
+    }
+
+    public function show_By_Date_And_Batch()
+    {
+        //get all Books
+        //$attendancesList = Attendance::all();
+        $attendancesList = DB::select('SELECT batches_id, date
+                                       FROM attendances');
+
+        return View::make('attendances.show_By_Date_And_Batch',compact('attendancesList'));
     }
 
     public function show_Attendances()

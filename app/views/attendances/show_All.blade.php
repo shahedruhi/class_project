@@ -6,7 +6,17 @@
     <div class="col-sm-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h4 class="text-center">Attendance list</h4>
+
+            </div>
+            <div class="col-sm-offset-4 col-sm-4">
+                <div class="btn grey-switcher" >
+                    <a href="/show_Attendances">
+                        Back to Show Attendances Page
+                    </a>
+                </div>
+            </div>
+            <div class="col-sm-offset-5 col-sm-5">
+                <h4>Attendance list</h4>
             </div>
             <div class="panel-body">
                 @if (count($attendancesList))
