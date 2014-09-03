@@ -30,13 +30,21 @@ class AttendanceController extends \BaseController {
 
     public function edit_Attendances()
     {
+
         return View::make('attendances.edit_Attendances');
     }
 
     public function show_List()
     {
         //get all Books
-        $attendancesList = Attendance::all();
+        //$attendancesList = Attendance::all();
+        $attendancesList = DB::table('users')
+                           ->join('attendances', 'users.user_id', '=', 'attendances.users_id')
+                           ->select('users.user_id','users.name', 'attendances.date', 'attendances.start_time', 'attendances.end_time', 'attendances.presence', 'attendances.comments')
+                           ->orderBy('attendances.date')
+                           ->orderBy('users.user_id')
+                           ->get();
+
         return View::make('attendances.show_List',compact('attendancesList'));
     }
 
@@ -218,7 +226,8 @@ class AttendanceController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('attendances.attendance_input');
+        return View::make('attendances.attendance_input');
+
 	}
 
 

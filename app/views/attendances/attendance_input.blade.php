@@ -9,9 +9,9 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-12 center" style="text-align: Center;">
+        <?php
 
-
-
+        ?>
         </div>
     </div>
 

@@ -11,9 +11,8 @@
             <div class="panel-body">
                 <div class="row">
 
+                    {{ Form::open(array( 'method' => 'get', 'action' => array('AttendanceController@edit'))) }}
 
-<!--                {{ Form::open(array('attendances.update')) }}-->
-<!--                {{ Form::open(array('attendances.attendance_input')) }}-->
                         @if (count($attendancesList))
                         <table class="table table-bordered">
                             <thead>
@@ -36,7 +35,7 @@
                                 <td>{{ $attendance->name }}</td>
 
 
-                                <td>Present {{ Form::checkbox('selector[]', $attendance->id, true) }}</td>
+                                <td>Absent {{ Form::checkbox('selector[]', $attendance->id) }}</td>
 
 <!--                                <td>If you want to add any comments {{ Form::text('comments[]') }}</td>-->
                                 <!--<td>
@@ -56,10 +55,9 @@
                 </div>
                 <div class="row" style="text-align: center;">
 
+                   {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
 
-<!--                        {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}-->
-                    <td>{{ link_to_route('attendances.edit', 'Input', array('selector[]'),
-                        array('class' => 'btn btn-warning')) }}</td>
+
 
                 </div>
 
