@@ -53,9 +53,20 @@ class AttendanceController extends \BaseController {
 //                                       INNER JOIN users
 //                                       ON users.user_id = attendances.users_id');
 
-        $attendancesList = DB::select('SELECT *
-                                       FROM attendances
-                                       WHERE date = ?', array('2014-08-02'));
+//        $attendancesList = DB::select('SELECT *
+//                                       FROM attendances
+//                                       WHERE date = ?', array('2014-09-01'));
+
+//        $attendancesList = DB::table('attendances')
+//                                    ->where('date', '=', '2014-09-01')
+//                                    ->orderBy('users_id')->get();
+
+        $attendancesList = DB::table('users')
+                                    ->join('attendances', 'users.user_id', '=', 'attendances.users_id')
+                                    ->select('users.name', 'attendances.id', 'attendances.users_id', 'attendances.date')
+                                    ->where('attendances.date', '=', '2014-09-01')
+                                    ->orderBy('users.user_id')
+                                    ->get();
 
         //DB::select('select * from users where id = ?', array('value'));
 
@@ -64,9 +75,9 @@ class AttendanceController extends \BaseController {
         //return View::make('attendances.input_By_Date');
     }
 
-    public function commence_course()
+    public function attendance_input()
     {
-        return View::make('attendances.commence_course');
+        return View::make('attendances.attendance_input');
     }
 
 
@@ -184,6 +195,7 @@ class AttendanceController extends \BaseController {
 	}
 
 
+
 	/**
 	 * Display the specified resource.
 	 *
@@ -206,7 +218,7 @@ class AttendanceController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return View::make('attendances.attendance_input');
 	}
 
 

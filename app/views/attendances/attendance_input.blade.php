@@ -4,7 +4,7 @@
 
 
 <div id="content-header" class="mini">
-    <h1>COMMENCE COURSE PAGE</h1>
+    <h1>INPUT PAGE</h1>
 </div>
 <div class="container-fluid">
     <div class="row">

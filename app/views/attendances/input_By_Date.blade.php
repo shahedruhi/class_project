@@ -12,15 +12,17 @@
                 <div class="row">
 
 
-                {{ Form::open(array('attendances.update')) }}
+<!--                {{ Form::open(array('attendances.update')) }}-->
+<!--                {{ Form::open(array('attendances.attendance_input')) }}-->
                         @if (count($attendancesList))
                         <table class="table table-bordered">
                             <thead>
                             <tr>
                                 <th>Date</th>
                                 <th>ID</th>
+                                <th>Name</th>
                                 <th>Presence Status</th>
-                                <th>Comments</th>
+<!--                                <th>Comments</th>-->
 
 
                             </tr>
@@ -31,20 +33,18 @@
                             <tr>
                                 <td>{{ $attendance->date }}</td>
                                 <td>{{ $attendance->users_id }}</td>
+                                <td>{{ $attendance->name }}</td>
 
-                                <td>Present {{ Form::checkbox('presence', 'yes', true, array('class' => 'name')) }}</td>
 
-                                <td>If you want to add any comments {{ Form::text('comments') }}</td>
-                                <td>
+                                <td>Present {{ Form::checkbox('selector[]', $attendance->id, true) }}</td>
+
+<!--                                <td>If you want to add any comments {{ Form::text('comments[]') }}</td>-->
+                                <!--<td>
                                 <td>{{ link_to_route('attendances.show', 'Read', array($attendance->id),
                                     array('class' => 'btn btn-primary')) }}</td>
                                 <td>{{ link_to_route('attendances.edit', 'Update', array($attendance->id),
                                     array('class' => 'btn btn-warning')) }}</td>
-                                </td>
-
-
-
-
+                                </td>-->
 
                             </tr>
                             @endforeach
@@ -57,7 +57,9 @@
                 <div class="row" style="text-align: center;">
 
 
-                        {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}
+<!--                        {{ Form::submit('Save', array('class' => 'btn btn-primary')) }}-->
+                    <td>{{ link_to_route('attendances.edit', 'Input', array('selector[]'),
+                        array('class' => 'btn btn-warning')) }}</td>
 
                 </div>
 

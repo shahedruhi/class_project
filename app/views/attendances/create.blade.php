@@ -33,6 +33,7 @@
         {{ Form::label('Start Date', 'Start Date:') }}
 <!--        {{ Form::input('date', 'start_date') }}-->
         {{ Form::text('start_date', $value = null , $attributes = [ 'placeholder' => '2014-09-02 04:22']) }}
+        2014-09-02 04:22
     </li>
     <li>
         {{ Form::label('End Date', 'End Date:') }}
