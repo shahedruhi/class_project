@@ -9,7 +9,21 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 center" style="text-align: Center;">
-                <p><a href="/input_By_Date">Input Attendances</a></p>
+
+                <div class="col-sm-offset-4 col-sm-4">
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                <div class="col-sm-offset-4 col-sm-4">
+                    <div class="btn grey-switcher" >
+<!--                        <a href="/input_By_Date">-->
+                            <a href="/attendance_input">
+                            Input Attendances By Date
+                        </a>
+                    </div>
+                </div>
+
 
 
 

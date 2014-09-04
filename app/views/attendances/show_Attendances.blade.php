@@ -17,7 +17,7 @@
                 <div class="col-sm-offset-4 col-sm-4">
                     <div class="btn grey-switcher" >
                         <a href="/show_All">
-                            Show All Attendances
+                            Show All Attendances Sort by Date
                         </a>
                     </div>
                 </div>

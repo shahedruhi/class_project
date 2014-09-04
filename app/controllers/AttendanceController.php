@@ -95,6 +95,30 @@ class AttendanceController extends \BaseController {
 
     public function attendance_input()
     {
+//        $attendancesList = DB::table('users')
+//                            ->join('attendances', 'users.user_id', '=', 'attendances.users_id')
+//                            ->select('users.user_id','users.name', 'attendances.date', 'attendances.start_time', 'attendances.end_time', 'attendances.presence', 'attendances.comments')
+//                            ->orderBy('attendances.date')
+//                            ->orderBy('users.user_id')
+//                            ->get();
+
+        $dateList = DB::table('attendances')
+                            ->select('date')
+                            ->orderBy('date')
+                            ->distinct()
+                            ->get();
+
+        $batchList = DB::table('attendances')
+                            ->select('batches_id')
+                            ->orderBy('batches_id')
+                            ->distinct()
+                            ->get();
+
+        print_r($dateList);
+        print_r($batchList);
+        die();
+
+        return View::make('attendances.show_All',compact('attendancesList'));
         return View::make('attendances.attendance_input');
     }
 
@@ -223,8 +247,8 @@ class AttendanceController extends \BaseController {
 	public function show()
 	{
 		////get all Books
-        $attendancesList = Attendance::all();
-        return View::make('attendances.show_List',compact('attendancesList'));
+        //$attendancesList = Attendance::all();
+        return View::make('attendances.course_commence');
 	}
 
 
@@ -234,12 +258,45 @@ class AttendanceController extends \BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function edit($id)
+	public function edit($id = null)
 	{
-        return View::make('attendances.attendance_input');
+        $attendanceInput = Input::all();
+
+
+
+        //print_r($attendanceInput);
+        //print_r($attendanceInput['selector']);
+        $id = $attendanceInput['selector'];
+        //print_r($id[0]);
+        //print_r($id[1]);
+
+        //$attendancesList= DB::update('update attendances set presence = 0 where id = ?', array('128'));
+
+        for($index = 0; $index < count($id);  $index++)
+        {
+            $attendancesList = DB::table('attendances')
+                ->where('id', '=', $id[$index])
+                ->update(array('presence' => '0'));
+        }
+
+
+//        $attendancesList = DB::table('attendances')
+//                                    ->where('id', '=', $id[0])
+//                                    ->update(array('presence' => '0'));
+
+//        print_r($attendancesList);
+//
+//        die();
+
+        return View::make('attendances.success_input');
 
 	}
 
+    public function course_commence()
+    {
+
+        return View::make('attendances.course_commence');
+    }
 
 	/**
 	 * Update the specified resource in storage.
@@ -249,7 +306,7 @@ class AttendanceController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+
 	}
 
 

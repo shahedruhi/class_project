@@ -37,6 +37,13 @@ Route::get('attendance_input','AttendanceController@attendance_input');
 
 Route::get('show_By_Date_And_Batch','AttendanceController@show_By_Date_And_Batch');
 
+Route::get('course_commence','AttendanceController@course_commence');
+
+//Route::get('attendances.success_input', function()
+//{
+//    return View::make('attendances.success_input');
+//});
+
 Route::resource('attendances','AttendanceController');
 
 /*
