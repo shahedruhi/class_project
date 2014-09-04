@@ -78,11 +78,22 @@ class AttendanceController extends \BaseController {
 //        $attendancesList = DB::table('attendances')
 //                                    ->where('date', '=', '2014-09-01')
 //                                    ->orderBy('users_id')->get();
+        $attendanceInput = Input::all();
+
+        $date = $attendanceInput['date'];
+        $batch = $attendanceInput['batch'];
+
+
+//        print_r($date);
+//        print_r($batch);
+//        die();
+
 
         $attendancesList = DB::table('users')
                                     ->join('attendances', 'users.user_id', '=', 'attendances.users_id')
                                     ->select('users.name', 'attendances.id', 'attendances.users_id', 'attendances.date')
-                                    ->where('attendances.date', '=', '2014-09-01')
+                                    ->where('attendances.date', '=', $date)
+                                    ->where('attendances.batches_id', '=', $batch)
                                     ->orderBy('users.user_id')
                                     ->get();
 
@@ -114,12 +125,13 @@ class AttendanceController extends \BaseController {
                             ->distinct()
                             ->get();
 
-        print_r($dateList);
-        print_r($batchList);
-        die();
+//        print_r($dateList);
+//        print_r($batchList);
+//        die();
 
-        return View::make('attendances.show_All',compact('attendancesList'));
-        return View::make('attendances.attendance_input');
+        return View::make('attendances.attendance_input',compact('dateList', 'batchList'));
+
+
     }
 
 
@@ -275,8 +287,8 @@ class AttendanceController extends \BaseController {
         for($index = 0; $index < count($id);  $index++)
         {
             $attendancesList = DB::table('attendances')
-                ->where('id', '=', $id[$index])
-                ->update(array('presence' => '0'));
+                                ->where('id', '=', $id[$index])
+                                ->update(array('presence' => '0'));
         }
 
 

@@ -1,6 +1,6 @@
-@extends('layouts.attendance')
+@extends('layouts.master')
 
-@section('main')
+@section('content')
 
 
     <div id="content-header" class="mini">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-sm-offset-4 col-sm-4">
                     <div class="btn grey-switcher" >
-<!--                        <a href="/input_By_Date">-->
+<!--                        <a href="/input_By_Date"> attendance_input-->
                             <a href="/attendance_input">
                             Input Attendances By Date
                         </a>

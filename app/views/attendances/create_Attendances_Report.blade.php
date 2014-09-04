@@ -1,6 +1,6 @@
-@extends('layouts.attendance')
+@extends('layouts.master')
 
-@section('main')
+@section('content')
 
 
 <div id="content-header" class="mini">

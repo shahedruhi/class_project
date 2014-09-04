@@ -1,5 +1,5 @@
-@extends('layouts.attendance')
-@section('main')
+@extends('layouts.master')
+@section('content')
 <h1>COMMENCE COURSE</h1>
 
 {{ Form::open(array('route' => 'attendances.store')) }}
